@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Level/LevelSwitcherTest.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level/MISC/Message.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Textures/WASD_MESSAGE.png" type="Texture" id=4]
+[ext_resource path="res://Textures/SPACE_MESSAGE.png" type="Texture" id=5]
+
+[node name="Level1" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06393, 0 )
+
+[node name="LevelSwitcherTest" parent="." instance=ExtResource( 1 )]
+
+[node name="TutorialMessages" type="Spatial" parent="."]
+
+[node name="EscGroup" type="Spatial" parent="TutorialMessages"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0063, 0, -14.4629 )
+
+[node name="Message" parent="TutorialMessages/EscGroup" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173268, 2.36166, -3.11125 )
+hframes = 2
+
+[node name="Message2" parent="TutorialMessages/EscGroup" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173268, 1.65971, -3.11125 )
+hframes = 2
+frame = 1
+
+[node name="EscGroup3" type="Spatial" parent="TutorialMessages"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9567, 0, 1.00702 )
+
+[node name="Message" parent="TutorialMessages/EscGroup3" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173268, 2.36166, -3.11125 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 58 )
+
+[node name="Message2" parent="TutorialMessages/EscGroup3" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173268, 1.65971, -3.11125 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 320, 0, 188, 58 )
+
+[node name="EscGroup2" type="Spatial" parent="TutorialMessages"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.34042 )
+
+[node name="Message" parent="TutorialMessages/EscGroup2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173268, 2.36166, -3.11125 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 58 )
+
+[node name="Message2" parent="TutorialMessages/EscGroup2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173268, 1.65971, -3.11125 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 320, 0, 180, 58 )
