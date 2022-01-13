@@ -17,6 +17,12 @@ func _ready():
 	spatialHeight = $Spatial.transform.origin.y
 	playerHeight = $MeshInstance.mesh.get_aabb().size.y
 	$MeshInstance.queue_free()
+	SceneSwitcher.connect("sceneChanged", self, "playerSetup")
+
+func playerSetup(pos : Vector3, rot : Vector3):
+	global_transform.origin = pos
+	camera.rotation.x = rot.x
+	$Spatial.rotation.y = rot.y
 
 func _physics_process(delta):
 	var input := Vector3()
@@ -101,6 +107,9 @@ func camVertMove(val, sensitivity, cVal := 1.2):
 	
 func makeRotate(deg : float):
 	$Spatial.rotate_y(deg)
+	
+func getRotation():
+	return (camera.rotation + $Spatial.rotation)
 
 func _unhandled_input(event):
 	if(event is InputEventMouseMotion):
